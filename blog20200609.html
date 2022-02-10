@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta data-authpack="guard" data-redirect="../home.html" />
+  <meta charset="utf-8">
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/php-mail-form/validate.js"></script>
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  <script>
+    head('');
+  </script>
+</head>
+
+<body>
+  <!-- Static navbar -->
+  <script>
+    navbar('');
+  </script>
+
+
+  <!-- +++++ Post +++++ -->
+  <div id="white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+
+          <p>
+            <bd>June 9, 2020</bd>
+          </p>
+          <h4>apcheの謎文字化けの修正</h4>
+          <p>このページをを編集する際、macにapacheでローカルサーバーを立てて動作確認してからgithubにpushしている。
+            本番環境では文字化けはしないのだがローカルで文字化けするので原因を探る。
+          </p>
+          <h3>結論</h3>
+          <p>直った。　たくさん調べてconfigファイル直せだのイロイロ試したが改善せず
+            、なんとなく共通化したheadが読み込めていないのではと思い、headの先頭にUTF8ul指定を加えたところ直った。。。</p>
+          <p>head部分を共通化して</p>
+          <div class="sourceview">
+            <pre class="brush: html;">&lt;meta charset=&quot;utf-8&quot;&gt;</pre>
+          </div>
+          <p> を読み込む順序が変わったのが問題だった。。</p>
+          <hr>
+          <p><a href="blog.html"># Back</a></p>
+        </div>
+
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /white -->
+
+
+
+  <!-- +++++ Footer Section +++++ -->
+  <script>
+    footer('');
+  </script>
+</body>
+
+</html>
